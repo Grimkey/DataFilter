@@ -23,6 +23,7 @@
             Assert.Equal(expected, searchnode.ToString());
         }
 
+        [Fact]
         public void DataFilter_IsEmpty_True()
         {
             Assert.True(emptyTree.IsEmpty);
