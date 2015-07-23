@@ -3,7 +3,7 @@
     using System;
     using Xunit;
 
-    public class DataFilterTest
+    public sealed class DataFilterTest
     {
         private static readonly DataFilter emptyTree = new DataFilter(null, null, DataFilter.BooleanOp.None);
         private static readonly DataFilter leftHandSide = new DataFilter(new DataFilter.SearchNode("LeftColumn", ">", 5));
@@ -28,12 +28,13 @@
             Assert.True(emptyTree.IsEmpty);
         }
 
+        [Fact]
         public void DataFilter_IsEmpty_False()
         {
             Assert.False(leftHandSide.IsEmpty);
         }
 
-
+        [Fact]
         public void DataFilter_IsLeaf_FalseEmptyTree()
         {
             Assert.False(emptyTree.IsLeaf);
